@@ -1,12 +1,12 @@
 {
   "main": "build/index.js",
   "scripts": {
-    "migrate": "./node_modules/.bin/sequelize db:migrate",
-    "unmigrate": "./node_modules/.bin/sequelize db:migrate:undo:all",
-    "seed": "./node_modules/.bin/sequelize db:seed:all",
-    "unseed": "./node_modules/.bin/sequelize db:seed:undo:all",
-    "sequelize": "npm run unmigrate && npm run migrate && npm run unseed && npm run seed",
-    "prebuild": "echo --- tslint -c tslint.json -p tsconfig.json --fix && npm run sequelize",
+    "migrate": "sequelize db:migrate",
+    "unmigrate": "sequelize db:migrate:undo:all",
+    "seed": "sequelize db:seed:all",
+    "unseed": "sequelize db:seed:undo:all",
+    "setupDB": "npm run unmigrate && npm run migrate && npm run unseed && npm run seed",
+    "prebuild": "echo --- tslint -c tslint.json -p tsconfig.json --fix && npm run setupDB",
     "build": "rimraf build && tsc",
     "prestart": "npm run build",
     "start": "node .",

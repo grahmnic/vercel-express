@@ -6,7 +6,8 @@
   "homepage": "https://github.com/ngduc/vercel-express",
   "main": "app/build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build && cd .. && cd bootstrap && npm run build"
   },
   "license": "MIT",
   "dependencies": {},
