@@ -4,28 +4,28 @@
   },
   "builds": [
     {
-      "src": "backend/build/index.js",
+      "src": "bootstrap/build/index.js",
       "use": "@vercel/node",
-      "config": { "includeFiles": ["backend/build/**"] }
+      "config": { "includeFiles": ["bootstrap/build/**"] }
     },
     {
-      "src": "ui/build/**",
+      "src": "client/build/**",
       "use": "@vercel/static",
-      "config": { "includeFiles": ["ui/build/**"] }
+      "config": { "includeFiles": ["client/build/**"] }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "backend/build/index.js"
+      "dest": "bootstrap/build/index.js"
     },
     {
       "src": "/",
-      "dest": "ui/build/index.html"
+      "dest": "client/build/index.html"
     },
     {
       "src": "/(.+)",
-      "dest": "ui/build/$1"
+      "dest": "client/build/$1"
     }
   ]
 }
