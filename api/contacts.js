@@ -1,4 +1,4 @@
-const db = require('./models');
+const db = require('../bootstrap/models');
 
 export default (req, res) => {
   db.Contact.findAll()
