@@ -1,32 +1,48 @@
 {
-  "name": "vercel-express",
-  "version": "1.2.0",
-  "description": "Vercel Express and UI fullstack webapp example.",
-  "author": "Duc Nguyen",
-  "homepage": "https://github.com/ngduc/vercel-express",
-  "main": "app/build/index.js",
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.14",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@vercel/node": "^1.12.1",
+    "history": "^5.1.0",
+    "lodash": "^4.17.21",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.1.1",
+    "react-scripts": "5.0.0",
+    "styled-components": "^5.3.3",
+    "typescript": "^4.5.4",
+    "web-vitals": "^2.1.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd client && npm run build && cd .. && cd bootstrap && npm run build"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "husky": "^5.1.1"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "prettier": {
-    "tabWidth": 2,
-    "printWidth": 120,
-    "singleQuote": true,
-    "trailingComma": "none",
-    "parser": "typescript"
-  },
-  "engines": {
-    "node": ">=12.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "echo --- npm test"
-    }
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
