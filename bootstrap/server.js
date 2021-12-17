@@ -9,11 +9,11 @@ app.use(express.static(__dirname + '/static'));
 
 app.get('/api/contacts', (req, res) => {
   return db.Contact.findAll()
-    .then((contacts) => res.send(contacts))
+    .then((contact) => res.send(contact))
     .catch((err) => {
-      console.log('There was an error querying contacts', JSON.stringify(err))
-      return res.send(err)
-    });
+      console.log('***There was an error getting contacts', JSON.stringify(err))
+      return res.status(400).send(err)
+    })
 });
 
 app.post('/api/contacts', (req, res) => {
